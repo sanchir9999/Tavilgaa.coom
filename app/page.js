@@ -1,13 +1,12 @@
 
-import { Container } from "./components/Container";
-import { Footer } from "./components/Footer";
-import Navbar from "./components/Navbar";
+import { Container, Navbar, Footer, } from "./components/Container";
+
 export default function Home() {
   return (
     <>
       <div className=" h-full m-auto flex flex-col justify-center items-center bg-[#d5dede]">
-        <Navbar />
         <Container />
+        <Navbar />
         <Footer />
       </div>
     </>
