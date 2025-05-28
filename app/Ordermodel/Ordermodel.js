@@ -22,7 +22,8 @@ export const Ordermodel = ({ isOpen, onClose, product }) => {
             <div className="bg-white p-6 rounded-xl max-w-md w-full">
                 <h2 className="text-xl font-bold mb-4">Захиалга</h2>
 
-                <img src={product.imageUrl} alt={product.name} className="w-full h-48 object-cover rounded-lg mb-4" />
+                <img src={product.imageUrl} alt={product.name} className="w-full h-64 object-contain rounded-lg mb-4" />
+
 
                 <div className="mb-4">
                     <label className="block text-sm font-medium mb-1">Хэдэн ширхэг:</label>
@@ -39,19 +40,14 @@ export const Ordermodel = ({ isOpen, onClose, product }) => {
                     <p>Нийт үнэ: <span className="font-semibold">{total.toLocaleString()}₮</span></p>
                 </div>
 
-                <div className="mb-4">
+                <div className="m-2 text-center">
                     <p className="mb-1 font-medium">QPay (Khaan Bank):</p>
-                    {/* Үнийн дүнд таарсан QR-г энд байршуулна */}
-                    <img
-                        src={`https://api.qpay.mn/qr/${total}`} // Жишээ линк. Та яг Khaan Bank QPay API ашиглах ёстой.
-                        alt="QPay QR"
-                        className="w-48 h-48 mx-auto"
-                    />
-                </div>
-
-                <div className="flex justify-end gap-2">
-                    <button onClick={handleClose} className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400">Болих</button>
-                    <button className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700">Баталгаажуулах</button>
+                    <p className="text-lg font-semibold">Дансны дугаар: 5039582920</p>
+                    <p className="text-lg">Мөнхбат Санчир</p>
+                    <p className="text-lg mt-2">Гүйлгээний утга: Утасны дугаар</p>
+                    <p className="mt-6 text-base font-medium text-gray-700">
+                        Гүйлгээ хийсний дараа 8817-5658 дугаарт залгаж, мэдэгдэхийг хүсэж байна. Таны гүйлгээ баталгаажих хүртэл хүлээн авна уу.
+                    </p>
                 </div>
             </div>
         </div>
