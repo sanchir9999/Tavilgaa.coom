@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 export const Ordermodel = ({ isOpen, onClose, product }) => {
     const [quantity, setQuantity] = useState(1);
     const [total, setTotal] = useState(0);
+    const handleClose = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });  // хуудасны эхэнд очих
+        onClose();  // модал хаах функцээ дуудах
+    };
 
     useEffect(() => {
         if (product) {
@@ -46,7 +50,7 @@ export const Ordermodel = ({ isOpen, onClose, product }) => {
                 </div>
 
                 <div className="flex justify-end gap-2">
-                    <button onClick={onClose} className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400">Болих</button>
+                    <button onClick={handleClose} className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400">Болих</button>
                     <button className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700">Баталгаажуулах</button>
                 </div>
             </div>

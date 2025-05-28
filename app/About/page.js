@@ -1,5 +1,15 @@
-import About from '../About/About';
+"use client";
+
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
+import About from "./About";
 
 export default function Home() {
-    return <About />;
+    return (
+        <>
+            <Navbar />
+            <About />
+            <Footer />
+        </>
+    );
 }
