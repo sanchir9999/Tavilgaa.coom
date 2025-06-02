@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { ThemeToggle } from './ThemeToggle';
 import { useState } from "react";
+import ExchangeRate from "./ExchangeRate"; // Валют ханшийн компонентыг импортлоно
 
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -9,19 +10,32 @@ export const Navbar = () => {
     return (
         <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50 transition">
             <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
-                {/* Logo → Homepage link */}
-                <Link href="/" legacyBehavior>
-                    <a className="text-2xl font-bold text-blue-600 dark:text-white cursor-pointer select-none">
-                        Tavilgaa.com
-                    </a>
-                </Link>
+                {/* Logo + Валют ханш нэг мөрөнд */}
+                <div className="flex items-center space-x-6">
+                    <Link href="/" legacyBehavior>
+                        <a className="text-2xl font-bold text-blue-600 dark:text-white cursor-pointer select-none">
+                            Tavilgaa.com
+                        </a>
+                    </Link>
+
+                    {/* Валют ханш - desktop-д харуулах, жижиг дэлгэцэд нуух */}
+                    <div>
+                        <ExchangeRate />
+                    </div>
+                </div>
 
                 {/* Desktop menu */}
                 <ul className="hidden md:flex space-x-8 font-semibold text-gray-700 dark:text-gray-200">
                     <Link href="/" legacyBehavior>
                         <li><a href="#home" className="hover:text-blue-600 transition">Нүүр</a></li>
                     </Link>
-                    <li><a href="#products" className="hover:text-blue-600 transition">Сандлууд</a></li>
+
+                    <Link href="/" legacyBehavior>
+                        <li><a href="#products" className="hover:text-blue-600 transition">Сандлууд</a></li>
+                    </Link>
+                    <Link href="/" legacyBehavior>
+                        <li><a href="#products" className="hover:text-blue-600 transition">Ширээнүүд</a></li>
+                    </Link>
                     <li>
                         <Link href="/About" legacyBehavior>
                             <a className="hover:text-blue-600 transition">Бидний тухай</a>
@@ -30,7 +44,7 @@ export const Navbar = () => {
                     <li><a href="#contact" className="hover:text-blue-600 transition">Холбоо барих</a></li>
                 </ul>
 
-                {/* Theme toggle button */}
+                {/* Theme toggle button + menu toggle */}
                 <div className="flex items-center gap-4">
                     <ThemeToggle />
                     <button

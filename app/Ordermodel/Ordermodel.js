@@ -45,8 +45,8 @@ export const Ordermodel = ({ isOpen, onClose, product }) => {
                     <p className="text-lg font-semibold">Дансны дугаар: 5039582920</p>
                     <p className="text-lg">Мөнхбат Санчир</p>
                     <p className="text-lg mt-2">Гүйлгээний утга: Утасны дугаар</p>
-                    <p className="mt-6 text-base font-medium text-gray-700">
-                        Гүйлгээ хийсний дараа 8817-5658 дугаарт залгаж, мэдэгдэхийг хүсэж байна. Таны гүйлгээ баталгаажих хүртэл хүлээн авна уу.
+                    <p className="mt-2 text-base font-medium text-gray-700">
+                        Гүйлгээ хийсний дараа 8817-5658 дугаарт залгаж, мэдэгдэнэ үү. Таны захиалга баталгаажих хүртэл түр хүлээнэ үү.
                     </p>
                 </div>
             </div>
