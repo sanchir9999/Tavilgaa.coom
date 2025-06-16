@@ -2,15 +2,15 @@
 import Link from "next/link";
 import { ThemeToggle } from './ThemeToggle';
 import { useState } from "react";
-import ExchangeRate from "./ExchangeRate"; // Валют ханшийн компонентыг импортлоно
+
 
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50 transition">
+        <nav className="fixed top-0 left-0 right-0 bg-white/70 dark:bg-blue-800/50 shadow-md z-50 transition backdrop-blur-xs">
             <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
-                {/* Logo + Валют ханш нэг мөрөнд */}
+                {/* Logo + Weather нэг мөрөнд */}
                 <div className="flex items-center space-x-6">
                     <Link href="/" legacyBehavior>
                         <a className="text-2xl font-bold text-blue-600 dark:text-white cursor-pointer select-none">
@@ -18,9 +18,9 @@ export const Navbar = () => {
                         </a>
                     </Link>
 
-                    {/* Валют ханш - desktop-д харуулах, жижиг дэлгэцэд нуух */}
-                    <div>
-                        <ExchangeRate />
+                    {/* Цаг агаар - зөвхөн desktop дээр харуулах */}
+                    <div className="hidden md:block">
+
                     </div>
                 </div>
 
@@ -33,18 +33,21 @@ export const Navbar = () => {
                     <Link href="/" legacyBehavior>
                         <li><a href="#products" className="hover:text-blue-600 transition">Сандлууд</a></li>
                     </Link>
+
                     <Link href="/" legacyBehavior>
                         <li><a href="#products" className="hover:text-blue-600 transition">Ширээнүүд</a></li>
                     </Link>
+
                     <li>
                         <Link href="/About" legacyBehavior>
                             <a className="hover:text-blue-600 transition">Бидний тухай</a>
                         </Link>
                     </li>
+
                     <li><a href="#contact" className="hover:text-blue-600 transition">Холбоо барих</a></li>
                 </ul>
 
-                {/* Theme toggle button + menu toggle */}
+                {/* Theme toggle + Mobile menu toggle */}
                 <div className="flex items-center gap-4">
                     <ThemeToggle />
                     <button
