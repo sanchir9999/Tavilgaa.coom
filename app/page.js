@@ -11,7 +11,6 @@ export default function Home() {
       <Container />
       <Footer />
       <MouseFollower />
-
     </div>
   );
 }
