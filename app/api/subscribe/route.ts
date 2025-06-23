@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
     try {
-        const { email } = await req.json();
+        const { name, email } = await req.json(); // name, email-г хамтад нь авах
 
         const transporter = nodemailer.createTransport({
             service: "Gmail",
@@ -13,17 +13,26 @@ export async function POST(req) {
             },
         });
 
-        const mailOptions = {
-            from: `"Тавилгаа.ком" <${process.env.EMAIL_USER}>`,
-            to: process.env.NOTIFY_EMAIL,
-            subject: "Шинэ бүртгэл",
-            text: `Шинээр бүртгүүлсэн хэрэглэгч: ${email}`,
+        const userMailOptions = {
+            from: `"Tavilgaa.com" <${process.env.EMAIL_USER}>`,
+            to: email,
+            subject: "Tavilgaa.com бүртгэл амжилттай боллоо",
+            text: `Сайн байна уу ${name}!\n\nТанд баярлалаа! Таны и-мэйл Tavilgaa.com-д амжилттай бүртгэгдлээ.\n\nТаны тавилгын найдвартай сонголт юм.`,
         };
 
-        await transporter.sendMail(mailOptions);
-        return NextResponse.json({ message: "И-мэйл илгээгдлээ" });
+        const adminMailOptions = {
+            from: `"Tavilgaa.com" <${process.env.EMAIL_USER}>`,
+            to: process.env.NOTIFY_EMAIL,
+            subject: "Tavilgaa.com-д шинэ харилцагч бүртгэгдлээ",
+            text: `Шинэ хэрэглэгч бүртгэгдлээ: ${email}`,
+        };
+
+        await transporter.sendMail(userMailOptions);
+        await transporter.sendMail(adminMailOptions);
+
+        return NextResponse.json({ message: "Мэйлүүд амжилттай илгээгдлээ" });
     } catch (error) {
-        console.error("И-мэйл илгээхэд алдаа гарлаа:", error);
+        console.error("Мэйл илгээхэд алдаа гарлаа:", error);
         return NextResponse.json({ message: "Алдаа гарлаа" }, { status: 500 });
     }
 }
