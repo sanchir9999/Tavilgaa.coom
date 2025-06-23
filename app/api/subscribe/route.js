@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
     try {
-        const { name, email } = await req.json(); // name, email-г хамтад нь авах
+        const { name, email } = await req.json();
 
         const transporter = nodemailer.createTransport({
             service: "Gmail",
