@@ -8,7 +8,7 @@ export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 bg-white/70 dark:bg-blue-800/50 shadow-md z-50 transition backdrop-blur-xs">
+        <nav className="fixed top-0 left-0 right-0 bg-white/70 dark:bg-blue-700 shadow-md z-50 transition backdrop-blur-xs">
             <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
                 {/* Logo + Weather нэг мөрөнд */}
                 <div className="flex items-center space-x-6">
