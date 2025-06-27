@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const Footer = () => {
     return (
         <footer id="contact" className="bg-blue-700 text-gray-300 py-5 mt-10">
@@ -26,7 +28,11 @@ export const Footer = () => {
                     <ul className="text-sm space-y-1">
                         <li><a href="/" className="hover:text-white">Нүүр</a></li>
                         <li><a href="/products" className="hover:text-white">Бүтээгдэхүүн</a></li>
-                        <li><a href="/about" className="hover:text-white">Бидний тухай</a></li>
+                        <Link href="/About" legacyBehavior>
+                            <li><a href="/about" className="hover:text-white">Бидний тухай</a></li>
+                        </Link>
+
+
                         <li><a href="/ordermodel" className="hover:text-white">Захиалах</a></li>
                     </ul>
                 </div>

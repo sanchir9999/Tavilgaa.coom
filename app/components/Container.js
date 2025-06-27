@@ -90,18 +90,20 @@ export const Container = () => {
         <div className="container mx-auto px-2 max-w-7xl mb-16">
             <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6">{title}</h1>
 
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
                 {items.map((item, index) => (
                     <div
                         key={index}
-                        className="rounded-lg shadow-sm overflow-hidden p-2 bg-white hover:shadow-md transition min-h-[280px] flex flex-col justify-between"
+                        className="rounded-xl shadow-sm overflow-hidden p-2 bg-white hover:shadow-md transition flex flex-col justify-between group"
                     >
-                        <img
-                            src={`${item.imageUrl}?w=400&h=240&c=fill`}
-                            alt={item.name}
-                            className="w-full h-36 object-cover rounded-md mb-2"
-                        />
-                        <div className="mb-2">
+                        <div className="overflow-hidden rounded-md">
+                            <img
+                                src={item.imageUrl}
+                                alt={item.name}
+                                className="w-full aspect-[4/3] object-contain rounded-md mb-2 bg-white transition-transform duration-300 ease-in-out group-hover:scale-105"
+                            />
+                        </div>
+                        <div className="mb-2 px-1">
                             <h2 className="text-sm font-semibold mb-0.5">{item.name}</h2>
                             <p className="text-gray-700 text-xs mb-1">{item.price}</p>
                             {item.available ? (
@@ -111,20 +113,20 @@ export const Container = () => {
                             )}
                         </div>
                         <Link href={`/products/${item.slug}`} legacyBehavior>
-                            <button className="bg-blue-600 text-white text-xs px-2 py-1 rounded hover:bg-blue-700 w-full">
+                            <a className="block bg-blue-600 text-white text-xs text-center px-2 py-1 rounded hover:bg-blue-700 transition">
                                 Захиалах
-                            </button>
+                            </a>
                         </Link>
                     </div>
                 ))}
             </div>
         </div>
     );
-
     return (
         <div className="bg-gray-100 min-h-screen py-8 pt-24">
             {renderProductSlider(chairs, "Сандлууд")}
-            {renderProductSlider(tables, "Компютерийн ширээ")}
+            {renderProductSlider(tables, "Ширээнүүд")}
         </div>
     );
+
 };
