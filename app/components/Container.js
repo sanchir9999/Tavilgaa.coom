@@ -8,7 +8,7 @@ export const Container = () => {
             slug: "office-chair-1",
             name: "Оффис Сандал",
             price: "₮100,000",
-            imageUrl: "https://res.cloudinary.com/ddyif81ff/image/upload/v1748111169/Halada_shop_3_ydujzx.png",
+            imageUrl: "https://res.cloudinary.com/ddyif81ff/image/upload/v1751379481/01c4fb9a-96d1-464b-a035-32df5dc1a030_iqijn9.jpg",
             available: true,
         },
         {
@@ -83,6 +83,13 @@ export const Container = () => {
             price: "₮380,000",
             imageUrl: "https://res.cloudinary.com/ddyif81ff/image/upload/v1748864027/84d70df95b56ee8c9ecb5efa78fe6fef_nuuxyg.jpg",
             available: false,
+        },
+        {
+            slug: "dining-table",
+            name: "компьютерын ширээ сандал",
+            price: "₮300,000",
+            imageUrl: "https://res.cloudinary.com/ddyif81ff/image/upload/v1751379232/d4651328-edfc-47dd-94f3-4815eb22ae9c_ujvtjz.jpg",
+            available: true,
         },
     ];
 

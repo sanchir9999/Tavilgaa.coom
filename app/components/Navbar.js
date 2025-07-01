@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 export const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(true);
 
     return (
         <nav className="fixed top-0 left-0 right-0 bg-white/70 dark:bg-blue-700 shadow-md z-50 transition backdrop-blur-xs">

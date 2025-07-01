@@ -1,77 +1,73 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 
 export default function About() {
-    const { theme } = useTheme(); // ← theme-ийг эндээс авна
-    const [isLetterOpen, setIsLetterOpen] = useState(false);
+    const { theme } = useTheme();
 
     return (
-        <div className={`min-h-screen px-4 sm:px-8 pt-20 transition-colors duration-500 
-            ${theme === "dark" ? "bg-gray-900 text-gray-200" : "bg-white text-gray-800"}`}>
-
-            <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl font-extrabold mb-6 border-b-4 border-indigo-500 pb-2">
-                    Бидний тухай
+        <div
+            className={`min-h-screen px-4 sm:px-8 pt-20 transition-colors duration-500
+            ${theme === "dark" ? "bg-gray-900 text-gray-200" : "bg-white text-gray-800"}`}
+        >
+            <div className="max-w-4xl mx-auto space-y-8">
+                <h1 className="text-4xl font-extrabold border-b-4 border-indigo-500 pb-2">
+                    Халада Форэвэр ХХК
                 </h1>
 
-                <p className="max-w-3xl leading-relaxed text-lg">
-                    Манай компани 2024 оны 11 сард 100% дотоодын хөрөнгө оруулалтаар байгууллагдсан бөгөөд оффисын тавилгын худалдаагаар мэргэшсэн.
-                    <br />
-                    Харилцагчийн сэтгэл ханамж бол бидний хамгийн чухал зорилго.
-                    <br />
-                    <strong>Холбоо барих:</strong> <a href="tel:+97688175658" className="text-indigo-500 hover:underline">8817 5658</a>
-                    <br />
-                    <strong>Имэйл:</strong> <a href="mailto:Monhbatsanchir1@gmail.com" className="text-indigo-500 hover:underline">Monhbatsanchir1@gmail.com</a>
+                <p className="text-lg leading-relaxed">
+                    Халада Форэвэр ХХК нь 2024 оны 11 сарын7-нд 100% дотоодын хөрөнгө оруулалтаар байгуулагдсан бөгөөд оффисын тавилгын худалдаа, нийлүүлэлтийн чиглэлээр мэргэшсэн компани юм.
+                    Бид орчин үеийн стандарт, чанарт нийцсэн оффисын сандал, ширээг нийлүүлж, харилцагчийн сэтгэл ханамжийг нэн тэргүүнд тавьдаг.
                 </p>
 
-                {/* 💖 Захидал хэсэг */}
-                <div className="mt-16 text-center">
-                    <button
-                        onClick={() => setIsLetterOpen(!isLetterOpen)}
-                        className="px-8 py-3 bg-pink-600 text-white font-semibold rounded-full shadow-lg hover:bg-pink-700 transition"
-                    >
-                        {isLetterOpen ? "Хаах" : "💌 Захидал унших"}
-                    </button>
+                <div className="space-y-4">
+                    <div>
+                        <h2 className="text-2xl font-semibold text-indigo-600">Эрхэм зорилго</h2>
+                        <p className="leading-relaxed">
+                            Монголын бизнесийн салбарт чанартай, тав тухтай оффисын тавилгын шийдлийг нийлүүлж, харилцагчдын бүтээмжийг дэмжих.
+                        </p>
+                    </div>
 
-                    <AnimatePresence>
-                        {isLetterOpen && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 30 }}
-                                transition={{ duration: 0.6 }}
-                                className="mt-8 mx-auto p-8 bg-pink-100 border border-pink-300 rounded-3xl shadow-2xl max-w-2xl text-left"
-                            >
-                                <h2 className="text-3xl font-bold text-pink-600 mb-4 text-center">
-                                    Ожикод бичсэн захидал
-                                </h2>
-                                <p className="text-pink-800 text-base leading-relaxed space-y-2">
-                                    <span>Хүндэт Ожикод,</span>
-                                    <br />
-                                    Бага багаар зүрх сэтгэлийг минь догдлуулж байгаа танд энэ захидлыг бичиж байна.
-                                    <br />
-                                    Анх харсан мөчөөс эхлээд багагүй хугацаа өнгөрчээ, гэсэн хэдий ч одоо ч таны хажууд сандарч, түгддэг өөрийгөө заримдаа ойлгохгүй юм. 😊
-                                    <br />
-                                    Үнсье kiss kiss 😘 Сайхан амраарай.
-                                    <br />
-                                    <span className="italic text-pink-500">— Санчир</span>
-                                </p>
+                    <div>
+                        <h2 className="text-2xl font-semibold text-indigo-600">Алсын хараа</h2>
+                        <p className="leading-relaxed">
+                            Оффисын тавилгын салбарт Монголын хамгийн итгэмжтэй, тэргүүлэгч брэнд болох.
+                        </p>
+                    </div>
 
-                                <div className="mt-6 text-right text-sm text-gray-500">
-                                    {new Date().toLocaleString("mn-MN", {
-                                        year: "numeric",
-                                        month: "long",
-                                        day: "numeric",
-                                        hour: "2-digit",
-                                        minute: "2-digit",
-                                    })} — Улаанбаатар хот
-                                </div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                    <div>
+                        <h2 className="text-2xl font-semibold text-indigo-600">Үнэт зүйлс</h2>
+                        <ul className="list-disc list-inside space-y-1">
+                            <li>Харилцагч төвтэй үйлчилгээ</li>
+                            <li>Шударга байдал</li>
+                            <li>Чанар</li>
+                            <li>Багаар ажиллах чадвар</li>
+                            <li>Тогтвортой байдал</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="border-t border-gray-300 pt-4">
+                    <h2 className="text-2xl font-semibold text-indigo-600">Холбоо барих</h2>
+                    <p className="leading-relaxed">
+                        📍 Хан-Уул дүүрэг, 18 дугаар хороо, Хүннү 2222, 219 байр, B1 давхар
+                        <br />
+                        📞 Утас:{" "}
+                        <a href="tel:+97688175658" className="text-indigo-500 hover:underline">
+                            8817 5658, 99983923, 99917208
+                        </a>
+                        <br />
+                        ✉️ Имэйл:{" "}
+                        <a href="mailto:info@tavilgaa.com" className="text-indigo-500 hover:underline">
+                            info@tavilgaa.com
+                        </a>
+                        <br />
+                        🌐 Вэб:{" "}
+                        <a href="https://tavilgaa.com" target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:underline">
+                            tavilgaa.com
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>

@@ -1,7 +1,6 @@
 import { Container } from "./components/Container";
 import DiscountPopup from "./components/DiscountPopup";
 
-import MouseFollower from "./components/MouseFollower";
 
 
 
@@ -11,7 +10,7 @@ export default function Home() {
 
       <Container />
       <DiscountPopup />
-      <MouseFollower />
+
     </div>
   );
 }

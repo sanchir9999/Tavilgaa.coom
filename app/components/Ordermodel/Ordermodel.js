@@ -42,18 +42,21 @@ export default function Ordermodel({ isOpen, onClose, product }) {
                     </p>
                 </div>
 
+                {/* QPay зургаар харуулах хэсэг */}
                 <div className="m-2 text-center">
-                    <p className="mb-1 font-medium">QPay (Khaan Bank):</p>
-                    <p className="text-lg font-semibold">Дансны дугаар: 5039582920</p>
-                    <p className="text-lg">Мөнхбат Санчир</p>
-                    <p className="text-lg mt-2">Гүйлгээний утга: Утасны дугаар</p>
-                    <p className="mt-2 text-base font-medium text-gray-700">
-                        Гүйлгээ хийсний дараа 8817-5658 дугаарт залгаж, мэдэгдэнэ үү. Таны захиалга баталгаажих хүртэл түр хүлээнэ үү.
+                    <p className="mb-2 font-medium">QPay (Khaan Bank) QR код:</p>
+                    <img
+                        src="https://res.cloudinary.com/ddyif81ff/image/upload/v1751380428/Q_Pay.pdf_up4ehm.png"
+                        alt="QPay"
+                        className="w-48 h-auto mx-auto mb-2 rounded shadow"
+                    />
+                    <p className="text-base font-medium text-gray-700 mt-2">
+                        Гүйлгээ хийсний дараа 8817-5658 дугаарт залгаж, мэдэгдэнэ үү.
                     </p>
                 </div>
 
                 <button
-                    onClick={() => onClose()}
+                    onClick={onClose}
                     className="mt-4 bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded"
                 >
                     Хаах
