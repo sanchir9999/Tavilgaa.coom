@@ -90,10 +90,11 @@ export const generateViewport = () => {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200`}>
         <ThemeProvider>
           <Navbar />
-          <main className="min-h-screen">{children}</main>
+          {/* Add top padding to offset the fixed navbar height */}
+          <main className="min-h-screen pt-16 md:pt-20">{children}</main>
           <Analytics />
 
           <Footer />
@@ -102,4 +103,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const Footer = () => {
     return (
-        <footer id="contact" className="bg-blue-700 text-gray-300 py-8 mt-10">
+        <footer id="contact" className="bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 py-8 border-t border-black/5 dark:border-white/10">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 
                 {/* Лого / нэр */}

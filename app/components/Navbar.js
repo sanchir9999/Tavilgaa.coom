@@ -8,8 +8,8 @@ export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 bg-white/70 dark:bg-blue-700 shadow-md z-50 transition backdrop-blur-xs">
-            <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border-b border-black/5 dark:border-white/10">
+            <div className="max-w-7xl mx-auto flex h-16 md:h-20 items-center justify-between px-4">
                 {/* Logo + Weather нэг мөрөнд */}
                 <div className="flex items-center space-x-6">
                     <Link href="/" legacyBehavior>
@@ -25,7 +25,7 @@ export const Navbar = () => {
                 </div>
 
                 {/* Desktop menu */}
-                <ul className="hidden md:flex space-x-8 font-semibold text-gray-700 dark:text-gray-200">
+                <ul className="hidden md:flex space-x-8 font-medium text-gray-700 dark:text-gray-200">
                     <Link href="/" legacyBehavior>
                         <li><a href="#home" className="hover:text-blue-600 transition">Нүүр</a></li>
                     </Link>
@@ -74,7 +74,7 @@ export const Navbar = () => {
 
             {/* Mobile menu */}
             {menuOpen && (
-                <ul className="md:hidden bg-white dark:bg-gray-900 shadow-md px-4 py-4 space-y-4 font-semibold text-gray-700 dark:text-gray-200">
+                <ul className="md:hidden bg-white/90 dark:bg-gray-900/90 backdrop-blur px-4 py-4 space-y-4 font-medium text-gray-700 dark:text-gray-200 border-b border-black/5 dark:border-white/10">
                     <Link href="/" className="hover:text-blue-600 transition">
                         Нүүр
                     </Link>

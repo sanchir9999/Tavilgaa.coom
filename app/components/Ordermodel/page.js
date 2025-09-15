@@ -1,5 +1,5 @@
 "use client";
-import Ordermodel from '../Ordermodel/Ordermodel';
+import Ordermodel from './Ordermodel';
 
 export default function Order() {
     const sampleProduct = {
